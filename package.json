@@ -30,16 +30,11 @@
     "tailwindcss": "^3.4.17",
     "typescript": "5.8.3",
     "typescript-eslint": "8.31.0",
-    "vite": "^6.2.0",
-    "wrangler": "^4.33.0"
+    "vite": "^6.2.0"
   },
   "scripts": {
-    "prebuild": "wrangler types",
-    "build": "wrangler types && tsc -b && vite build",
-    "cf-typegen": "wrangler types",
-    "check": "wrangler types && tsc && vite build && wrangler deploy --dry-run",
-    "dev": "wrangler types && vite",
-    "lint": "eslint .",
-    "postinstall": "wrangler types"
+    "build": "vite build",
+    "dev": "vite",
+    "lint": "eslint ."
   }
 }
