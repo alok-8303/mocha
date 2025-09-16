@@ -34,10 +34,12 @@
     "wrangler": "^4.33.0"
   },
   "scripts": {
-    "build": "tsc -b && vite build",
+    "prebuild": "wrangler types",
+    "build": "wrangler types && tsc -b && vite build",
     "cf-typegen": "wrangler types",
-    "check": "tsc && vite build && wrangler deploy --dry-run",
-    "dev": "vite",
-    "lint": "eslint ."
+    "check": "wrangler types && tsc && vite build && wrangler deploy --dry-run",
+    "dev": "wrangler types && vite",
+    "lint": "eslint .",
+    "postinstall": "wrangler types"
   }
 }
